@@ -1,0 +1,13 @@
+import {ComponentCanDeactivate} from '../can-deactivate/component-can-deactivate';
+import {NgForm} from "@angular/forms";
+
+export abstract class FormCanDeactivate extends ComponentCanDeactivate{
+
+ abstract get form():NgForm;
+ 
+ canDeactivate():boolean{
+  debugger
+
+      return this.form.submitted || !this.form.dirty
+  }
+}
